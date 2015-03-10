@@ -30,6 +30,7 @@ $imprint = OOArticle::getArticleById(8);
     <link href="lib/lightbox/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" />
     <link href='lib/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href='lib/jquery-focuspoint/css/focuspoint.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
     <link href="<?php echo seo42::getCombinedCSSFile("project.css", $cssFiles); ?>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo seo42::getJSFile("//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"); ?>"></script>
@@ -48,8 +49,8 @@ $imprint = OOArticle::getArticleById(8);
                     ?>
                     <div class="item focuspoint" data-focus-x="<?php echo $focusx; ?>"
                          data-focus-y="<?php echo $focusy; ?>"
-                         data-image-w="1500"
-                         data-image-h="600">
+                         data-image-w="1920"
+                         data-image-h="500">
                         <img src="<?php echo seo42::getImageManagerFile($h, 'headerImage'); ?>" alt="">
                         <div class="container">
                             <div class="carousel-caption">
@@ -61,6 +62,18 @@ $imprint = OOArticle::getArticleById(8);
                         </div>
                     </div>
                 <?php } ?>
+            </div>
+
+            <div class="logo">
+                <a href="<?php echo $ssa->getUrl(); ?>">
+                    <img src="<?php echo seo42::getImageFile('logo.png'); ?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" />
+                </a>
+            </div>
+
+            <div class="contact">
+                <a href="<?php echo $contact->getUrl(); ?>">
+                    <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" title="Kontakt" alt="Kontakt" /> Kontakt
+                </a>
             </div>
 
             <div class="scrollToContent"><i class="fa fa-angle-down"></i></div>
@@ -81,24 +94,53 @@ $imprint = OOArticle::getArticleById(8);
         <i class="fa fa-navicon"></i>
     </div>
 
-    <div class="containerContent">
-        <?php echo $this->getArticle(); ?>
+    <div class="containerContent container">
+        <div class="row">
+            <div class="col-xs-9">
+                <?php echo $this->getArticle(1); ?>
+
+                <div class="contact">
+                    <a href="<?php echo $contact->getUrl(); ?>">
+                        <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" /> zum Kontakt
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <h2>Partner:</h2>
+
+                <div class="partner">
+                    <div class="content">
+                        <img src="<?php echo seo42::getImageManagerFile('partner1.png', 'bootstrap-2'); ?>" />
+                    </div>
+                    <a href="http://www.google.at" target="_blank"></a>
+                </div>
+
+                <div class="partner">
+                    <div class="content">
+                        <img src="<?php echo seo42::getImageManagerFile('partner2.png', 'bootstrap-2'); ?>" />
+                    </div>
+                    <a href="http://www.google.at" target="_blank"></a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="footerMargin"></div>
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <?php echo $contact->toLink(); ?><br>
+                <div class="col-md-3 shortlinks">
+                    <?php echo $contact->toLink(); ?>
                     <?php echo $aboutUs->toLink(); ?>
                 </div>
-                <div class="col-md-3">
-                    <?php echo $jobOffer->toLink(); ?><br>
+                <div class="col-md-3 shortlinks">
+                    <?php echo $jobOffer->toLink(); ?>
                     <?php echo $imprint->toLink(); ?>
                 </div>
-                <div class="col-md-6">
-                    logo
+                <div class="col-md-6 text-right">
+                    <a href="<?php echo $ssa->getUrl(); ?>">
+                        <img src="<?php echo seo42::getImageFile('logo-footer.png')?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" />
+                    </a>
                 </div>
             </div>
         </div>

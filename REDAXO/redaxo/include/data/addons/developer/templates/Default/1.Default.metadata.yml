@@ -1,8 +1,11 @@
 name: Default
 active: true
 attributes:
-    ctype: {  }
-    modules:
-        1: { all: '1' }
     categories:
         all: '1'
+    ctype:
+        1: Hauptbereich
+        2: 'Rechter Bereich'
+    modules:
+        1: { all: '1' }
+        2: { all: '1' }

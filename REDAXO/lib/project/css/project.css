@@ -7,7 +7,7 @@
     More info at: http://lesselements.com
   ---------------------------------------------------*/
 * {
-	font-family: Arial, sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	color: #444;
@@ -26,12 +26,17 @@ body {
 }
 
 h1, h1 .caps {
-	margin-bottom: 20px;
-	font-size: 40px;
-	font-weight: 400;
+	margin-bottom: 30px;
+	font-size: 70px;
+	font-weight: 200;
 }
 
-h2, h2 .caps { font-size: 22px; }
+h2, h2 .caps {
+	font-weight: 700;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
 p ul {
 	padding: 0;
 	margin: 0;
@@ -40,7 +45,7 @@ p ul {
 a:hover, a:focus { text-decoration: none; }
 #headerCarousel {
 	position: relative;
-	height: 600px;
+	height: 500px;
 	overflow: hidden;
 }
 
@@ -50,7 +55,45 @@ a:hover, a:focus { text-decoration: none; }
 	#headerCarousel .carousel-inner > a > img, #headerCarousel .carousel-inner > img, #headerCarousel .item > a > img, #headerCarousel .item > img { position: static; }
 }
 
-.navMain { background: #e5231b; }
+#headerCarousel .logo {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	padding: 0 15px;
+	text-align: center;
+}
+
+#headerCarousel .logo img {
+	margin-top: -121px;
+	max-width: 100%;
+}
+
+#headerCarousel .contact {
+	position: absolute;
+	top: 30px;
+	right: 45px;
+}
+
+#headerCarousel .contact img {
+	margin-top: -3px;
+	margin-right: 15px;
+}
+
+#headerCarousel .contact a {
+	font-weight: 600;
+	font-size: 30px;
+	color: #fff;
+}
+
+#headerCarousel .contact a:hover { color: #fff; }
+#headerCarousel .contact:hover { opacity: 0.9; }
+.navMain {
+	background: #e5231b;
+	padding: 15px 0;
+	padding-bottom: 25px;
+}
+
 .navMain ul {
 	list-style-type: none;
 	margin: 0;
@@ -63,20 +106,56 @@ a:hover, a:focus { text-decoration: none; }
 }
 
 .navMain ul li a {
-	font-size: 30px;
-	font-weight: 400;
+	font-size: 40px;
+	font-weight: 200;
 	color: #fff;
+	border-bottom: 1px solid #e5231b;
+}
+
+.navMain ul li:hover a { border-bottom: 1px solid #fff; }
+.navMain ul li.active a {
+	font-weight: 600;
+	border-bottom: 1px solid #fff;
 }
 
 .containerContent { padding-top: 20px; }
-.footerMargin { height: 115px; }
+.containerContent .contact { margin-top: 60px; }
+.containerContent .contact a {
+	background: #e5231b;
+	padding: 15px 30px;
+	display: inline-block;
+	color: #fff;
+	font-size: 24px;
+}
+
+.containerContent .contact a img { margin-right: 15px; }
+.containerContent .contact:hover { opacity: 0.9; }
+.footerMargin { height: 330px; }
 footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 75px;
-	margin-top: -75px;
+	height: 283px;
+	margin-top: -283px;
 	background-color: #f6e824;
+	padding-top: 60px;
+}
+
+footer .shortlinks { padding-top: 45px; }
+footer .shortlinks a {
+	display: block;
+	margin-bottom: 20px;
+}
+
+footer a {
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #000;
+}
+
+footer a:hover {
+	color: #000;
+	text-decoration: underline;
 }
 
 label.required:after {
@@ -84,6 +163,32 @@ label.required:after {
 	color: red;
 	position: absolute;
 	right: 0;
+}
+
+.partner {
+	position: relative;
+	height: 165px;
+	width: 100%;
+	background: transparent;
+	display: table;
+	margin-bottom: 45px;
+}
+
+.partner .content {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0 10px;
+}
+
+.partner .content img { max-width: 100%; }
+.partner a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(236,236,236,0.5);
 }
 
 

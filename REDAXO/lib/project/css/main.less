@@ -9,13 +9,18 @@
 @blackLight: #444;
 @blackLight50: rgba(68,68,68,0.5);
 
+@grey: #ececec;
+@grey80: rgb(236, 236, 236, 0.5);
+
 @red: #e5231b;
 @yellow: #f6e824;
 
 @fontArial: Arial, sans-serif;
+@fontSourceSansPro: 'Source Sans Pro', sans-serif;
 
-@footerHeight: 75px;
+@footerHeight: 283px;
 
+@fontExtraLight: 200;
 @fontLight: 300;
 @fontNormal: 400;
 @fontMedium: 500;
@@ -23,7 +28,7 @@
 @fontBold: 700;
 
 * {
-    font-family: @fontArial;
+    font-family: @fontSourceSansPro;
     font-size: 14px;
     font-weight: @fontNormal;
     color: @blackLight;
@@ -42,13 +47,15 @@ body {
 }
 
 h1, h1 .caps {
-    margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: @fontNormal;
+    margin-bottom: 30px;
+    font-size: 70px;
+    font-weight: @fontExtraLight;
 }
 
 h2, h2 .caps {
-    font-size: 22px;
+    font-weight: @fontBold;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 p ul {
@@ -64,12 +71,12 @@ a {
 
 #headerCarousel {
     position: relative;
-    height: 600px;
+    height: 500px;
     overflow: hidden;
 
     .carousel-inner, .item {
         height: 100%;
-
+//
         > a > img, > img {
             max-width: none;
 
@@ -78,10 +85,51 @@ a {
             }
         }
     }
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+
+        img {
+            margin-top: -121px;
+            max-width: 100%;
+        }
+    }
+
+    .contact {
+        position: absolute;
+        top: 30px;
+        right: 45px;
+
+        img {
+            margin-top: -3px;
+            margin-right: 15px;
+        }
+
+        a {
+            font-weight: @fontSemiBold;
+            font-size: 30px;
+            color: @white;
+
+            &:hover {
+                color: @white;
+            }
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
 
 .navMain {
     background: @red;
+    padding: 15px 0;
+    padding-bottom: 25px;
 
     ul {
         list-style-type: none;
@@ -93,9 +141,24 @@ a {
             padding: 0 45px;
 
             a {
-                font-size: 30px;
-                font-weight: @fontNormal;
+                font-size: 40px;
+                font-weight: @fontExtraLight;
                 color: @white;
+                border-bottom: 1px solid @red;
+            }
+
+            &:hover {
+                a {
+                    border-bottom: 1px solid @white;
+                }
+            }
+
+            &.active {
+
+                a {
+                    font-weight: @fontSemiBold;
+                    border-bottom: 1px solid @white;
+                }
             }
         }
     }
@@ -103,10 +166,30 @@ a {
 
 .containerContent {
     padding-top: 20px;
+
+    .contact {
+        margin-top: 60px;
+
+        a {
+            background: @red;
+            padding: 15px 30px;
+            display: inline-block;
+            color: @white;
+            font-size: 24px;
+
+            img {
+                margin-right: 15px;
+            }
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
 
 .footerMargin {
-    height: 115px;
+    height: 330px;
 }
 
 footer {
@@ -116,6 +199,27 @@ footer {
     height: @footerHeight;
     margin-top: -@footerHeight;
     background-color: @yellow;
+    padding-top: 60px;
+
+    .shortlinks {
+        padding-top: 45px;
+
+        a {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    a {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: @black;
+
+        &:hover {
+            color: @black;
+            text-decoration: underline;
+        }
+    }
 }
 
 label.required:after {
@@ -123,4 +227,33 @@ label.required:after {
     color: red;
     position: absolute;
     right: 0;
+}
+
+.partner {
+    position: relative;
+    height: 165px;
+    width: 100%;
+    background: transparent;
+    display: table;
+    margin-bottom: 45px;
+
+    .content {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 10px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: @grey80;
+    }
 }
