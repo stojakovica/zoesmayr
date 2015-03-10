@@ -1,0 +1,86 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+* {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: #444;
+}
+
+html, body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	min-height: 100%;
+	height: 100%;
+	height: auto !important;
+}
+
+h1, h1 .caps {
+	margin-bottom: 20px;
+	font-size: 40px;
+	font-weight: 400;
+}
+
+h2, h2 .caps { font-size: 22px; }
+p ul {
+	padding: 0;
+	margin: 0;
+}
+
+a:hover, a:focus { text-decoration: none; }
+#headerCarousel {
+	position: relative;
+	height: 600px;
+	overflow: hidden;
+}
+
+#headerCarousel .carousel-inner, #headerCarousel .item { height: 100%; }
+#headerCarousel .carousel-inner > a > img, #headerCarousel .carousel-inner > img, #headerCarousel .item > a > img, #headerCarousel .item > img { max-width: none; }
+@media (max-width: 767px) {
+	#headerCarousel .carousel-inner > a > img, #headerCarousel .carousel-inner > img, #headerCarousel .item > a > img, #headerCarousel .item > img { position: static; }
+}
+
+.navMain { background: #e5231b; }
+.navMain ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.navMain ul li {
+	display: inline-block;
+	padding: 0 45px;
+}
+
+.navMain ul li a {
+	font-size: 30px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.containerContent { padding-top: 20px; }
+.footerMargin { height: 115px; }
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 75px;
+	margin-top: -75px;
+	background-color: #f6e824;
+}
+
+label.required:after {
+	content: "*";
+	color: red;
+	position: absolute;
+	right: 0;
+}
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+mkdir -p ../REDAXO/redaxo/include/generated/files/
+mkdir -p ../REDAXO/redaxo/include/generated/templates/
+mkdir -p ../REDAXO/redaxo/include/generated/articles/
+mkdir -p ../REDAXO/redaxo/include/generated/addons/
