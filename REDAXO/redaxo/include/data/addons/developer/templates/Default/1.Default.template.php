@@ -13,6 +13,7 @@ $contact = OOArticle::getArticleById(5);
 $jobOffer = OOArticle::getArticleById(6);
 $aboutUs = OOArticle::getArticleById(7);
 $imprint = OOArticle::getArticleById(8);
+$isContact = $article->getId() == $contact->getId();
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo seo42::getLangCode(); ?>" xmlns:fb="http://ogp.me/ns/fb#">
@@ -70,6 +71,7 @@ $imprint = OOArticle::getArticleById(8);
                 </a>
             </div>
 
+
             <div class="contact">
                 <a href="<?php echo $contact->getUrl(); ?>">
                     <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" title="Kontakt" alt="Kontakt" /> Kontakt
@@ -96,14 +98,16 @@ $imprint = OOArticle::getArticleById(8);
 
     <div class="containerContent container">
         <div class="row">
-            <div class="col-xs-9">
+            <div class="col-xs-9 contentMain">
                 <?php echo $this->getArticle(1); ?>
 
+                <?php if(!$isContact) { ?>
                 <div class="contact">
                     <a href="<?php echo $contact->getUrl(); ?>">
                         <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" /> zum Kontakt
                     </a>
                 </div>
+                <?php } ?>
             </div>
             <div class="col-xs-3">
                 <h2>Partner:</h2>

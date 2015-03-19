@@ -6,7 +6,7 @@
   ---------------------------------------------------*/
 * {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 400;
 	color: #444;
 }
@@ -30,11 +30,12 @@ h1, h1 .caps {
 }
 
 h2, h2 .caps {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 30px;
 	margin-bottom: 30px;
 }
 
+p, ul { line-height: 26px; }
 p ul {
 	padding: 0;
 	margin: 0;
@@ -117,6 +118,7 @@ a:hover, a:focus { text-decoration: none; }
 }
 
 .containerContent { padding-top: 20px; }
+.containerContent .contentMain { border-right: 1px solid #e5231b; }
 .containerContent .contact { margin-top: 60px; }
 .containerContent .contact a {
 	background: #e5231b;

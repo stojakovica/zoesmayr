@@ -29,7 +29,7 @@
 
 * {
     font-family: @fontSourceSansPro;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: @fontNormal;
     color: @blackLight;
 }
@@ -53,9 +53,13 @@ h1, h1 .caps {
 }
 
 h2, h2 .caps {
-    font-weight: @fontBold;
+    font-weight: @fontSemiBold;
     font-size: 30px;
     margin-bottom: 30px;
+}
+
+p, ul {
+    line-height: 26px;
 }
 
 p ul {
@@ -166,6 +170,10 @@ a {
 
 .containerContent {
     padding-top: 20px;
+
+    .contentMain {
+        border-right: 1px solid @red;
+    }
 
     .contact {
         margin-top: 60px;
