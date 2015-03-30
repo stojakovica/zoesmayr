@@ -17,7 +17,7 @@ if(!$REX['REDAXO']) {
     <?php
     foreach($referenzen as $id => $ref) {
         ?>
-        <div class="col-sm-4">
+        <div class="col-sm-6 col-md-4">
             <div class="item">
                 <img src="<?php echo seo42::getImageManagerFile($ref['main_image'], 'tileList'); ?>" class="img-responsive">
 

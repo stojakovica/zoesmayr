@@ -93,7 +93,7 @@ $isContact = $article->getId() == $contact->getId();
 
     <div class="containerContent container">
         <div class="row">
-            <div class="col-xs-9 contentMain">
+            <div class="col-md-9 contentMain">
                 <?php echo $this->getArticle(1); ?>
 
                 <?php if(!$isContact) { ?>
@@ -104,7 +104,7 @@ $isContact = $article->getId() == $contact->getId();
                 </div>
                 <?php } ?>
             </div>
-            <div class="col-xs-3">
+            <div class="col-md-3">
                 <h2>Partner:</h2>
 
                 <div class="partner">
@@ -139,7 +139,7 @@ $isContact = $article->getId() == $contact->getId();
                 </div>
                 <div class="col-md-6 text-right">
                     <a href="<?php echo $ssa->getUrl(); ?>">
-                        <img src="<?php echo seo42::getImageFile('logo-footer.png')?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" />
+                        <img src="<?php echo seo42::getImageFile('logo-footer.png')?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" class="logo img-responsive center-block" />
                     </a>
                 </div>
             </div>
