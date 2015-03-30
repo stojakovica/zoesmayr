@@ -140,7 +140,7 @@ footer {
 	padding-top: 60px;
 }
 
-footer .shortlinks { padding-top: 45px; }
+footer .shortlinks { padding-top: 25px; }
 footer .shortlinks a {
 	display: block;
 	margin-bottom: 20px;
@@ -223,3 +223,44 @@ label.required:after {
 	.about .year span { margin-bottom: 5px; }
 }
 
+.referenzenList .item { position: relative; }
+.referenzenList .item .descriptionWrapper {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.referenzenList .item .descriptionWrapper .descriptionContainer {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.referenzenList .item .descriptionWrapper .description {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+.referenzenList .item > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.gallery { margin-bottom: 30px; }
+.overviewLink { padding-top: 65px; }
+.overviewLink a { color: #444; }
+.overviewLink a:hover { text-decoration: underline; }

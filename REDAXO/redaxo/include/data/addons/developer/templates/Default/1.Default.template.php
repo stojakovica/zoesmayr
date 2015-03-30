@@ -13,6 +13,7 @@ $contact = OOArticle::getArticleById(5);
 $jobOffer = OOArticle::getArticleById(6);
 $aboutUs = OOArticle::getArticleById(7);
 $imprint = OOArticle::getArticleById(8);
+$congrats = OOArticle::getArticleById(9);
 $isContact = $article->getId() == $contact->getId();
 ?>
 <!DOCTYPE html>
@@ -77,8 +78,6 @@ $isContact = $article->getId() == $contact->getId();
                     <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" title="Kontakt" alt="Kontakt" /> Kontakt
                 </a>
             </div>
-
-            <div class="scrollToContent"><i class="fa fa-angle-down"></i></div>
         </div>
     <?php } ?>
 
@@ -90,10 +89,6 @@ $isContact = $article->getId() == $contact->getId();
         $nav->setUlClass('clearfix');
         echo $nav->getNavigationByLevel(0);
         ?>
-    </div>
-
-    <div class="navToggle visible-xs visible-sm">
-        <i class="fa fa-navicon"></i>
     </div>
 
     <div class="containerContent container">
@@ -136,6 +131,7 @@ $isContact = $article->getId() == $contact->getId();
                 <div class="col-md-3 shortlinks">
                     <?php echo $contact->toLink(); ?>
                     <?php echo $aboutUs->toLink(); ?>
+                    <?php echo $congrats->toLink(); ?>
                 </div>
                 <div class="col-md-3 shortlinks">
                     <?php echo $jobOffer->toLink(); ?>
