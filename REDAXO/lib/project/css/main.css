@@ -190,27 +190,27 @@ label.required:after {
 	background: rgba(236,236,236,0.5);
 }
 
-.about {
+.about, .leistungen {
 	width: 100%;
 	margin-bottom: 30px;
 	display: table;
 }
 
-.about > div {
+.about > div, .leistungen > div {
 	float: none;
 	display: table-cell;
 	vertical-align: middle;
 }
 
 @media (max-width: 767px) {
-	.about > div { display: block; }
+	.about > div, .leistungen > div { display: block; }
 }
 
 @media (max-width: 767px) {
-	.about .year { text-align: center; }
+	.about .year, .leistungen .year { text-align: center; }
 }
 
-.about .year span {
+.about .year span, .leistungen .year span {
 	display: inline-block;
 	border: 1px dotted #444;
 	padding: 20px 15px;
@@ -220,9 +220,10 @@ label.required:after {
 }
 
 @media (max-width: 767px) {
-	.about .year span { margin-bottom: 5px; }
+	.about .year span, .leistungen .year span { margin-bottom: 5px; }
 }
 
+.leistungen { margin-bottom: 15px; }
 .referenzenList .item { position: relative; }
 .referenzenList .item .descriptionWrapper {
 	display: none;
