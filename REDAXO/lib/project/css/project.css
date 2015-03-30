@@ -91,8 +91,7 @@ a:hover, a:focus { text-decoration: none; }
 #headerCarousel .contact:hover { opacity: 0.9; }
 .navMain {
 	background: #e5231b;
-	padding: 15px 0;
-	padding-bottom: 25px;
+	padding: 45px 0;
 }
 
 .navMain ul {
@@ -191,6 +190,39 @@ label.required:after {
 	top: 0;
 	left: 0;
 	background: rgba(236,236,236,0.5);
+}
+
+.about {
+	width: 100%;
+	margin-bottom: 30px;
+	display: table;
+}
+
+.about > div {
+	float: none;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+	.about > div { display: block; }
+}
+
+@media (max-width: 767px) {
+	.about .year { text-align: center; }
+}
+
+.about .year span {
+	display: inline-block;
+	border: 1px dotted #444;
+	padding: 20px 15px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+}
+
+@media (max-width: 767px) {
+	.about .year span { margin-bottom: 5px; }
 }
 
 
