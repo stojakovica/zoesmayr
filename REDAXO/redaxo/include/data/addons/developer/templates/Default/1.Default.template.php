@@ -41,117 +41,120 @@ $isContact = $article->getId() == $contact->getId();
     <?php echo seo42::getLangTags(); ?>
 </head>
 <body style="background: url(<?php echo seo42::getImageFile("muster.png"); ?>);">
-    <?php if($headerImages) { ?>
-        <div id="headerCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <?php foreach($headerImages as $h) {
-                    $imageObj = OOMedia::getMediaByFileName($h);
-                    $focusx = $imageObj->getValue('med_focus_x')==""?0:$imageObj->getValue('med_focus_x');
-                    $focusy = $imageObj->getValue('med_focus_y')==""?0:$imageObj->getValue('med_focus_y');
-                    ?>
-                    <div class="item focuspoint" data-focus-x="<?php echo $focusx; ?>"
-                         data-focus-y="<?php echo $focusy; ?>"
-                         data-image-w="1920"
-                         data-image-h="500">
-                        <img src="<?php echo seo42::getImageManagerFile($h, 'headerImage'); ?>" alt="">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <?php if($imageObj->getTitle()) { ?>
-                                    <h2><?php echo $imageObj->getTitle(); ?></h2>
-                                <?php }
-                                echo convertTextile($imageObj->getValue('med_description')); ?>
-                            </div>
+<?php if($headerImages) { ?>
+    <div id="headerCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <?php foreach($headerImages as $h) {
+                $imageObj = OOMedia::getMediaByFileName($h);
+                $focusx = $imageObj->getValue('med_focus_x')==""?0:$imageObj->getValue('med_focus_x');
+                $focusy = $imageObj->getValue('med_focus_y')==""?0:$imageObj->getValue('med_focus_y');
+                ?>
+                <div class="item focuspoint" data-focus-x="<?php echo $focusx; ?>"
+                     data-focus-y="<?php echo $focusy; ?>"
+                     data-image-w="1920"
+                     data-image-h="500">
+                    <img src="<?php echo seo42::getImageManagerFile($h, 'headerImage'); ?>" alt="">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <?php if($imageObj->getTitle()) { ?>
+                                <h2><?php echo $imageObj->getTitle(); ?></h2>
+                            <?php }
+                            echo convertTextile($imageObj->getValue('med_description')); ?>
                         </div>
                     </div>
-                <?php } ?>
-            </div>
-
-            <div class="logo">
-                <a href="<?php echo $ssa->getUrl(); ?>">
-                    <img src="<?php echo seo42::getImageFile('logo.png'); ?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" />
-                </a>
-            </div>
-
-
-            <div class="contact">
-                <a href="<?php echo $contact->getUrl(); ?>">
-                    <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" title="Kontakt" alt="Kontakt" /> Kontakt
-                </a>
-            </div>
+                </div>
+            <?php } ?>
         </div>
-    <?php } ?>
 
-    <div class="navMain clearfix text-center">
-        <?php
-        $nav = new nav42();
-        $nav->setLevelDepth(4);
-        $nav->setShowAll(true);
-        $nav->setUlClass('clearfix');
-        echo $nav->getNavigationByLevel(0);
-        ?>
+        <div class="headerOverlay"></div>
+
+        <div class="logo">
+            <a href="<?php echo $ssa->getUrl(); ?>">
+                <img src="<?php echo seo42::getImageFile('logo.png'); ?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" />
+            </a>
+        </div>
+
+
+        <div class="contact">
+            <a href="<?php echo $contact->getUrl(); ?>">
+                <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" title="Kontakt" alt="Kontakt" /> Kontakt
+            </a>
+        </div>
     </div>
+<?php } ?>
 
-    <div class="containerContent container">
-        <div class="row">
-            <div class="col-md-9 contentMain">
-                <?php echo $this->getArticle(1); ?>
+<div class="navMain clearfix text-center">
+    <?php
+    $nav = new nav42();
+    $nav->setLevelDepth(4);
+    $nav->setShowAll(true);
+    $nav->setUlClass('clearfix');
+    echo $nav->getNavigationByLevel(0);
+    ?>
+</div>
 
-                <?php if(!$isContact) { ?>
+<div class="containerContent container">
+    <div class="row">
+        <div class="col-md-9 contentMain">
+            <?php echo $this->getArticle(1); ?>
+
+            <?php if(!$isContact) { ?>
                 <div class="contact">
                     <a href="<?php echo $contact->getUrl(); ?>">
                         <img src="<?php echo seo42::getIconFile('contact-icon-small.png'); ?>" /> zum Kontakt
                     </a>
                 </div>
-                <?php } ?>
+            <?php } ?>
+        </div>
+        <div class="col-md-3">
+            <h2>Partner:</h2>
+
+            <?php
+            $partner = OOMediaCategory::getCategoryById(1);
+            /** @var OOMedia $media */
+            foreach($partner->getMedia() as $media) {
+                ?>
+                <div class="partner">
+                    <div class="content">
+                        <img src="<?php echo seo42::getImageManagerFile($media->getFileName(), 'bootstrap-2'); ?>" />
+                    </div>
+                    <a href="<?php echo $media->getValue('med_link'); ?>" target="_blank"></a>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="footerMargin"></div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 shortlinks">
+                <?php echo $contact->toLink(); ?>
+                <?php echo $aboutUs->toLink(); ?>
+                <?php echo $congrats->toLink(); ?>
             </div>
-            <div class="col-md-3">
-                <h2>Partner:</h2>
-
-                <div class="partner">
-                    <div class="content">
-                        <img src="<?php echo seo42::getImageManagerFile('partner1.png', 'bootstrap-2'); ?>" />
-                    </div>
-                    <a href="http://www.google.at" target="_blank"></a>
-                </div>
-
-                <div class="partner">
-                    <div class="content">
-                        <img src="<?php echo seo42::getImageManagerFile('partner2.png', 'bootstrap-2'); ?>" />
-                    </div>
-                    <a href="http://www.google.at" target="_blank"></a>
-                </div>
+            <div class="col-md-3 shortlinks">
+                <?php echo $jobOffer->toLink(); ?>
+                <?php echo $imprint->toLink(); ?>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="<?php echo $ssa->getUrl(); ?>">
+                    <img src="<?php echo seo42::getImageFile('logo-footer.png')?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" class="logo img-responsive center-block" />
+                </a>
             </div>
         </div>
     </div>
+</footer>
 
-    <div class="footerMargin"></div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 shortlinks">
-                    <?php echo $contact->toLink(); ?>
-                    <?php echo $aboutUs->toLink(); ?>
-                    <?php echo $congrats->toLink(); ?>
-                </div>
-                <div class="col-md-3 shortlinks">
-                    <?php echo $jobOffer->toLink(); ?>
-                    <?php echo $imprint->toLink(); ?>
-                </div>
-                <div class="col-md-6 text-right">
-                    <a href="<?php echo $ssa->getUrl(); ?>">
-                        <img src="<?php echo seo42::getImageFile('logo-footer.png')?>" title="Zösmayr Elektrotechnik" alt="Zösmayr Elektrotechnik" class="logo img-responsive center-block" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="lib/jquery/jquery-1.11.2.min.js"></script>
-    <script src="lib/bootstrap-3.3.2/js/bootstrap.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
-    <script src="<?php echo seo42::getJSFile('jquery.stellar.min.js'); ?>"></script>
-    <script src="<?php echo seo42::getJSFile('main.js'); ?>"></script>
-    <link rel="shortcut icon" href="<?php echo seo42::getImageFile("favicon.ico"); ?>" type="image/x-icon" />
+<script src="lib/jquery/jquery-1.11.2.min.js"></script>
+<script src="lib/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/jquery-focuspoint/js/jquery.focuspoint.min.js"></script>
+<script src="<?php echo seo42::getJSFile('jquery.stellar.min.js'); ?>"></script>
+<script src="<?php echo seo42::getJSFile('main.js'); ?>"></script>
+<link rel="shortcut icon" href="<?php echo seo42::getImageFile("favicon.ico"); ?>" type="image/x-icon" />
 </body>
 </html>

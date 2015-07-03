@@ -24,7 +24,7 @@ if (!$REX['GG']) {
 
 // Setupservicestatus - if everything ok -> false; if problem set to true;
 $REX['SETUP'] = false;
-$REX['SERVER'] = 'http://localhost/zoesmayr/REDAXO/';
+$REX['SERVER'] = 'http://d24513.ispservices.at/new/';
 $REX['SERVERNAME'] = 'Zoesmayr Elektrotechnik';
 $REX['VERSION'] = "4";
 $REX['SUBVERSION'] = "6";
@@ -121,10 +121,10 @@ $REX['MEDIAPOOL']['IMAGE_TYPES']        = array('image/gif', 'image/jpg', 'image
 $REX['MEDIAPOOL']['ALLOWED_DOCTYPES']   = array('bmp', 'css', 'doc', 'docx', 'eps', 'gif', 'gz', 'jpg', 'mov', 'mp3', 'ogg', 'pdf', 'png', 'ppt', 'pptx', 'pps', 'ppsx', 'rar', 'rtf', 'swf', 'tar', 'tif', 'txt', 'wma', 'xls', 'xlsx', 'zip');
 
 // ----------------- DB1
-$REX['DB']['1']['HOST'] = 'localhost';
-$REX['DB']['1']['LOGIN'] = 'root';
-$REX['DB']['1']['PSW'] = 'root';
-$REX['DB']['1']['NAME'] = 'zoesmayr';
+$REX['DB']['1']['HOST'] = 'mysqlng03.intern.ispservices.at';
+$REX['DB']['1']['LOGIN'] = 'u24513_redaxo';
+$REX['DB']['1']['PSW'] = '6I9Fu5PPg82RWhS307Nm';
+$REX['DB']['1']['NAME'] = 'db24513_redaxo';
 $REX['DB']['1']['PERSISTENT'] = false;
 
 // ----------------- DB2 - if necessary
