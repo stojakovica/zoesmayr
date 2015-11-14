@@ -114,13 +114,12 @@ $isContact = $article->getId() == $contact->getId();
             /** @var OOMedia $media */
             foreach($partner->getMedia() as $media) {
                 ?>
-                <div class="partner">
+                <a href="<?php echo $media->getValue('med_link'); ?>" target="_blank" class="partner">
                     <div class="content">
                         <img src="<?php echo seo42::getImageManagerFile($media->getFileName(), 'bootstrap-2'); ?>" />
                     </div>
-                    <a href="<?php echo $media->getValue('med_link'); ?>" target="_blank"></a>
-                </div>
-                <?php
+                </a>
+            <?php
             }
             ?>
         </div>
@@ -139,6 +138,7 @@ $isContact = $article->getId() == $contact->getId();
             <div class="col-md-3 shortlinks">
                 <?php echo $jobOffer->toLink(); ?>
                 <?php echo $imprint->toLink(); ?>
+                <a href="https://www.wko.at/Content.Node/Service/Wirtschaftsrecht-und-Gewerberecht/Allgemeines-Zivil--und-Vertragsrecht/AGB-Datenbank/-AGB-Strukutur-/BS-Gewerbe-und-Handwerk/BI-Elektro--und-Alarmanlagentechnik/AGB_Elektrotechniker.pdf" title="AGB" target="_blank">AGB</a>
             </div>
             <div class="col-md-6 text-right">
                 <a href="<?php echo $ssa->getUrl(); ?>">
